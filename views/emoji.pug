@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  - var emoji=[{emoji_face:"laugh",emoji_hand:"raise",emoji_types:20},{emoji_face :"happy",emoji_hand:"thumsup",emoji_things:22},{emoji_face :"crying",emoji_hand:"hye",emoji_things:24}]
+  div(class="container-fluid")
+  div(class="row")
+   each e,index  in emoji
+    div(class="col-sm-2" onclick =`buy(${index})`) #{e.emoji_face}, #{e.emoji_hand}, #{e.emoji_things}
+    script.
+        function buy(a)
+        {
+            alert(`You purchased Item ${a+1}`)
+        }
